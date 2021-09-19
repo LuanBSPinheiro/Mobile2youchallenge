@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Mobile2youchallenge</string>
+    <string name="visual_icon">Ícone de visualizações</string>
+    <string name="total_fav">Ícone de favoritos totais</string>
+    <string name="fav_icon">Ícone de favoritar</string>
+    <string name="movie_image">Poster do filme</string>
+</resources>
