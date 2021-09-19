@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/soft_black">
+
+    <ImageView
+        android:id="@+id/miniPoster"
+        android:layout_width="87dp"
+        android:layout_height="125dp"
+        android:scaleType="fitXY"
+        android:padding="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/poster_poderoso_chefinho"
+        android:contentDescription="@string/mini_poster_desc" />
+
+    <TextView
+        android:id="@+id/miniPosterTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/hind_madurai_bold"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/miniPoster"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/ph_mini_titulo" />
+
+    <TextView
+        android:id="@+id/miniPosterYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hind_madurai_light"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/miniPosterTitle"
+        app:layout_constraintTop_toBottomOf="@id/miniPosterTitle"
+        tools:text="@string/mini_year" />
+
+    <TextView
+        android:id="@+id/miniPosterGenres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/hind_madurai_light"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        tools:text="@string/mini_genres"
+        app:layout_constraintTop_toBottomOf="@id/miniPosterTitle"
+        app:layout_constraintStart_toEndOf="@id/miniPosterYear"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

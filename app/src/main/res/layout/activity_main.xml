@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/soft_black">
 
     <ImageView
         android:id="@+id/imageMovie"
@@ -17,11 +17,13 @@
 
     <TextView
         android:id="@+id/movieTitle"
-        android:layout_width="250dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="6dp"
+        tools:text="Movie Title Part 3"
+        android:fontFamily="@font/hind_madurai_bold"
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageMovie" />
@@ -49,7 +51,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/movieTitle"
         app:srcCompat="@drawable/ic_likes"
-        android:contentDescription="@string/total_fav" />
+        android:contentDescription="@string/total_fav"
+        app:tint="@color/white" />
 
     <TextView
         android:id="@+id/movieLikes"
@@ -58,6 +61,7 @@
         android:padding="6dp"
         android:textColor="@color/white"
         android:textSize="15sp"
+        tools:text="1.5k Likes"
         app:layout_constraintBottom_toTopOf="@+id/scrollRV"
         app:layout_constraintStart_toEndOf="@+id/likesImage"
         app:layout_constraintTop_toBottomOf="@+id/movieTitle" />
@@ -67,6 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="6dp"
+        app:tint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/scrollRV"
         app:layout_constraintStart_toEndOf="@+id/movieLikes"
         app:layout_constraintTop_toBottomOf="@+id/movieTitle"
@@ -74,10 +79,11 @@
         android:contentDescription="@string/visual_icon" />
 
     <TextView
-        android:id="@+id/likePercentage"
+        android:id="@+id/viewsTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="6dp"
+        tools:text="12.6M"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/scrollRV"
         app:layout_constraintStart_toEndOf="@+id/viewsImage"
@@ -85,15 +91,17 @@
 
     <ScrollView
         android:id="@+id/scrollRV"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fillViewport="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/movieLikes">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/similarMoviesRV"
             android:layout_width="match_parent"
-            android:layout_height="0dp" />
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/similar_movies"/>
 
     </ScrollView>
 

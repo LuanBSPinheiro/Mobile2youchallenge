@@ -4,4 +4,8 @@
     <string name="total_fav">Ícone de favoritos totais</string>
     <string name="fav_icon">Ícone de favoritar</string>
     <string name="movie_image">Poster do filme</string>
+    <string name="mini_poster_desc">Mini poster filme relacionado</string>
+    <string name="ph_mini_titulo">Título Placeholder</string>
+    <string name="mini_year">2016</string>
+    <string name="mini_genres">Comedy, Animation</string>
 </resources>
