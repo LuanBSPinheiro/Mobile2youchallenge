@@ -7,8 +7,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-private const val URL_IMAGE_W500 = "https://image.tmdb.org/t/p/w500/"
 private const val URL_IMAGE = "https://image.tmdb.org/t/p/original/"
+private const val URL_IMAGE_W500 = "https://image.tmdb.org/t/p/w500/"
 
 class MoviePresenter(private val contractView: MovieContract.View) : MovieContract.Presenter {
 
@@ -21,7 +21,8 @@ class MoviePresenter(private val contractView: MovieContract.View) : MovieContra
                         response.body()?.let {
                             val newMovie = it.copy(
                                 backdropPath = URL_IMAGE + it.backdropPath,
-                                popularity = it.popularity + " %"
+                                likes = it.likes + " likes",
+                                popularity = it.popularity + " pessoas"
                             )
                             contractView.movieInfo(newMovie)
                             contractView.hideLoadingDialog()
@@ -45,12 +46,12 @@ class MoviePresenter(private val contractView: MovieContract.View) : MovieContra
                 ) {
                     if (response.isSuccessful) {
                         response.body()?.let {
-                            val newListMovie = it.results.map { movieItem ->
+                            val newMovieList = it.results.map { movieItem ->
                                 movieItem.copy(
                                     posterPath = URL_IMAGE_W500 + movieItem.posterPath
                                 )
                             }
-                            contractView.movieList(newListMovie)
+                            contractView.movieList(newMovieList)
                         }
                     }
                 }

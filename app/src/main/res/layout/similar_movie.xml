@@ -37,6 +37,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/hind_madurai_light"
         android:textColor="@color/white"
+        android:maxLength="4"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@id/miniPosterTitle"
         app:layout_constraintTop_toBottomOf="@id/miniPosterTitle"

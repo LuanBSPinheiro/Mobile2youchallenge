@@ -9,4 +9,6 @@
     <string name="mini_year">2016</string>
     <string name="mini_genres">Comedy, Animation</string>
     <string name="moviePlaceholder">Movie Title Part 3</string>
+    <string name="desfav">Desfavoritado</string>
+    <string name="fav">Favoritado</string>
 </resources>
