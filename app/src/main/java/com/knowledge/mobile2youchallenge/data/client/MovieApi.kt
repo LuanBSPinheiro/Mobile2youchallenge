@@ -1,7 +1,7 @@
 package com.knowledge.mobile2youchallenge.data.client
 
 import com.knowledge.mobile2youchallenge.ui.model.Movie
-import com.knowledge.mobile2youchallenge.ui.model.SimilarMovie
+import com.knowledge.mobile2youchallenge.ui.model.SimilarMovieList
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -18,5 +18,5 @@ interface MovieApi {
     @GET(value = "103/similar")
     fun getSimilarMovie(
         @Query("api_key") apiKey : String = ApiKey
-    ): Call<SimilarMovie>
+    ): Call<SimilarMovieList>
 }
