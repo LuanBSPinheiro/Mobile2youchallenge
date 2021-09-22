@@ -7,7 +7,7 @@
     android:background="@color/soft_black">
 
     <ImageView
-        android:id="@+id/miniPoster"
+        android:id="@+id/miniPosterImage"
         android:layout_width="87dp"
         android:layout_height="125dp"
         android:scaleType="fitXY"
@@ -27,7 +27,7 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/miniPoster"
+        app:layout_constraintStart_toEndOf="@id/miniPosterImage"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/ph_mini_titulo" />
 

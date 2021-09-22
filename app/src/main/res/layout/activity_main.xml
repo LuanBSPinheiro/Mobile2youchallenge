@@ -10,24 +10,23 @@
         android:id="@+id/imageMovie"
         android:layout_width="match_parent"
         android:layout_height="280dp"
+        android:contentDescription="@string/movie_image"
         android:scaleType="fitXY"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/thegodfather"
-        android:contentDescription="@string/movie_image" />
+        tools:srcCompat="@drawable/thegodfather" />
 
     <TextView
         android:id="@+id/movieTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="6dp"
-        tools:text="Movie Title Part 3"
         android:fontFamily="@font/hind_madurai_bold"
+        android:padding="@dimen/default_padding"
         android:textColor="@color/white"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageMovie" />
-
+        app:layout_constraintTop_toBottomOf="@+id/imageMovie"
+        tools:text="@string/moviePlaceholder" />
 
     <ImageView
         android:id="@+id/favButton"
@@ -36,58 +35,59 @@
         android:layout_marginTop="6dp"
         android:layout_marginEnd="6dp"
         android:background="@drawable/ic_to_favorite"
-        android:padding="6dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/white"
+        android:contentDescription="@string/fav_icon"
+        android:padding="@dimen/default_padding"
         app:layout_constraintBottom_toBottomOf="@id/movieTitle"
-        app:layout_constraintTop_toTopOf="@id/movieTitle"
-        android:contentDescription="@string/fav_icon" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/movieTitle" />
 
     <ImageView
-        android:id="@+id/likesImage"
+        android:id="@+id/ic_heart_filled"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="6dp"
+        android:contentDescription="@string/total_fav"
+        android:padding="@dimen/default_padding"
         app:layout_constraintBottom_toTopOf="@+id/scrollRV"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/movieTitle"
         app:srcCompat="@drawable/ic_likes"
-        android:contentDescription="@string/total_fav"
         app:tint="@color/white" />
 
     <TextView
         android:id="@+id/movieLikes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="6dp"
+        android:padding="@dimen/default_padding"
         android:textColor="@color/white"
         android:textSize="15sp"
-        tools:text="1.5k Likes"
         app:layout_constraintBottom_toTopOf="@+id/scrollRV"
-        app:layout_constraintStart_toEndOf="@+id/likesImage"
-        app:layout_constraintTop_toBottomOf="@+id/movieTitle" />
+        app:layout_constraintStart_toEndOf="@+id/ic_heart_filled"
+        app:layout_constraintTop_toBottomOf="@+id/movieTitle"
+        tools:text="1.5k Likes" />
 
     <ImageView
-        android:id="@+id/viewsImage"
+        android:id="@+id/ic_eye"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="6dp"
-        app:tint="@color/white"
+        android:contentDescription="@string/visual_icon"
+        android:padding="@dimen/default_padding"
         app:layout_constraintBottom_toTopOf="@+id/scrollRV"
         app:layout_constraintStart_toEndOf="@+id/movieLikes"
         app:layout_constraintTop_toBottomOf="@+id/movieTitle"
         app:srcCompat="@drawable/ic_views"
-        android:contentDescription="@string/visual_icon" />
+        app:tint="@color/white" />
 
     <TextView
         android:id="@+id/viewsTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="6dp"
-        tools:text="12.6M"
+        android:padding="@dimen/default_padding"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/scrollRV"
-        app:layout_constraintStart_toEndOf="@+id/viewsImage"
-        app:layout_constraintTop_toBottomOf="@+id/movieTitle" />
+        app:layout_constraintStart_toEndOf="@+id/ic_eye"
+        app:layout_constraintTop_toBottomOf="@+id/movieTitle"
+        tools:text="12.6M" />
 
     <ScrollView
         android:id="@+id/scrollRV"
@@ -101,10 +101,9 @@
             android:id="@+id/similarMoviesRV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:listitem="@layout/similar_movies"/>
-
+            tools:itemCount="2"
+            tools:listitem="@layout/similar_movie" />
     </ScrollView>
-
 
     <ProgressBar
         android:id="@+id/loading"
@@ -113,5 +112,4 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/imageMovie"
         app:layout_constraintTop_toTopOf="@+id/imageMovie" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

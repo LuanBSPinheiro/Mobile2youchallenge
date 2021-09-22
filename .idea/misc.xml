@@ -5,11 +5,12 @@
       <map>
         <entry key="..\:/Aulas/Mobile2youchallenge/app/src/main/res/drawable/ic_likes.xml" value="0.34270833333333334" />
         <entry key="..\:/Aulas/Mobile2youchallenge/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Aulas/Mobile2youchallenge/app/src/main/res/layout/similar_movie.xml" value="0.3265625" />
         <entry key="..\:/Aulas/Mobile2youchallenge/app/src/main/res/layout/similar_movies.xml" value="0.3265625" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
