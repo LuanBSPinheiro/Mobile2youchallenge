@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="default_padding">6dp</dimen>
+    <dimen name="movie_title">28sp</dimen>
+    <dimen name="margin_default">6dp</dimen>
+    <dimen name="default_text">15sp</dimen>
+    <dimen name="similar_title">18sp</dimen>
+    <dimen name="default_text_similar">16sp</dimen>
+    <dimen name="default_margin_similar">8dp</dimen>
+    <dimen name="max_height_movie_poster">240dp</dimen>
+    <dimen name="similar_width">87dp</dimen>
+    <dimen name="similar_height">125dp</dimen>
+    <dimen name="movie_poster">280dp</dimen>
 </resources>

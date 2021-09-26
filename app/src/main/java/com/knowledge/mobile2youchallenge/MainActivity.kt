@@ -17,7 +17,7 @@ import com.squareup.picasso.Picasso
 class MainActivity : AppCompatActivity(), MovieContract.View {
 
     private lateinit var binding: ActivityMainBinding
-    private val presenter = MoviePresenter(this)
+    private var presenter : MovieContract.Presenter? = MoviePresenter()
     private var isPressed = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,10 +26,17 @@ class MainActivity : AppCompatActivity(), MovieContract.View {
         val view = binding.root
         setContentView(view)
 
-        presenter.loadMovies()
-        presenter.loadListMovieSimilar()
+        presenter?.setView(this)
+        presenter?.loadMovies()
+        presenter?.loadListMovieSimilar()
 
         favoriteButton()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter?.setView(null)
+        presenter = null
     }
 
     override fun showLoadingDialog() {

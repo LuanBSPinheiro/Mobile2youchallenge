@@ -10,10 +10,12 @@ import retrofit2.Response
 private const val URL_IMAGE = "https://image.tmdb.org/t/p/original/"
 private const val URL_IMAGE_W500 = "https://image.tmdb.org/t/p/w500/"
 
-class MoviePresenter(private val contractView: MovieContract.View) : MovieContract.Presenter {
+class MoviePresenter : MovieContract.Presenter {
+
+    private var contractView: MovieContract.View? = null
 
     override fun loadMovies() {
-        contractView.showLoadingDialog()
+        contractView?.showLoadingDialog()
         RetrofitInitializer.instance.getMovieInfo()
             .enqueue(object : Callback<Movie> {
                 override fun onResponse(call: Call<Movie>, response: Response<Movie>) {
@@ -24,15 +26,15 @@ class MoviePresenter(private val contractView: MovieContract.View) : MovieContra
                                 likes = it.likes + " likes",
                                 popularity = it.popularity + " pessoas"
                             )
-                            contractView.movieInfo(newMovie)
-                            contractView.hideLoadingDialog()
+                            contractView?.movieInfo(newMovie)
+                            contractView?.hideLoadingDialog()
                         }
                     }
                 }
 
                 override fun onFailure(call: Call<Movie>, t: Throwable) {
-                    contractView.showError(t.message ?: "")
-                    contractView.hideLoadingDialog()
+                    contractView?.showError(t.message ?: "")
+                    contractView?.hideLoadingDialog()
                 }
             })
     }
@@ -51,14 +53,18 @@ class MoviePresenter(private val contractView: MovieContract.View) : MovieContra
                                     posterPath = URL_IMAGE_W500 + movieItem.posterPath
                                 )
                             }
-                            contractView.movieList(newMovieList)
+                            contractView?.movieList(newMovieList)
                         }
                     }
                 }
 
                 override fun onFailure(call: Call<SimilarMovieList>, t: Throwable) {
-                    contractView.showError(t.message ?: "")
+                    contractView?.showError(t.message ?: "")
                 }
             })
+    }
+
+    override fun setView(view: MovieContract.View?) {
+        contractView = view
     }
 }

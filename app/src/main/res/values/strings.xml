@@ -11,4 +11,6 @@
     <string name="moviePlaceholder">Movie Title Part 3</string>
     <string name="desfav">Desfavoritado</string>
     <string name="fav">Favoritado</string>
+    <string name="likes_placeholder">1.5k Likes</string>
+    <string name="views_placeholder">12.6M</string>
 </resources>

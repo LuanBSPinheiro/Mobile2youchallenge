@@ -18,5 +18,6 @@ interface MovieContract {
     interface Presenter {
         fun loadMovies()
         fun loadListMovieSimilar()
+        fun setView(view: MovieContract.View?)
     }
 }
